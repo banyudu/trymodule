@@ -1,5 +1,5 @@
 {
-  "name": "trymodule",
+  "name": "@banyudu/trymodule",
   "version": "1.4.0",
   "description": "It's never been easier to try nodejs modules!",
   "main": "index.js",
@@ -9,6 +9,10 @@
   },
   "bin": {
     "trymodule": "./cli.js"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "author": "Victor Bjelkholm <victorbjelkholm@gmail.com> (https://www.github.com/victorbjelkholm)",
   "repository": "https://github.com/VictorBjelkholm/trymodule",
