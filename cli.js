@@ -4,13 +4,11 @@ var repl = require('repl')
 var path = require('path')
 var os = require('os')
 var colors = require('colors')
-var replHistory = require('repl.history')
 var vm = require('vm')
 var exec = require('child_process').exec
 var loadPackages = require('./index')
 
 const TRYMODULE_PATH = process.env.TRYMODULE_PATH || path.resolve((os.homedir()), '.trymodule')
-const TRYMODULE_HISTORY_PATH = process.env.TRYMODULE_HISTORY_PATH || path.resolve(TRYMODULE_PATH, 'repl_history')
 
 const flags = []
 const packages = {} // data looks like [moduleName, as]
@@ -87,7 +85,6 @@ if (hasFlag('--clear')) {
           }
         }
       })
-      replHistory(replServer, TRYMODULE_HISTORY_PATH)
       replServer.context = Object.assign(replServer.context, contextPackages)
     }
   })
